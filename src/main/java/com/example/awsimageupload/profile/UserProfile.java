@@ -5,9 +5,10 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Optional;
 import java.util.UUID;
 
-// use lombok 
+// use lombok
 @AllArgsConstructor
 @Getter
 @Setter
@@ -18,4 +19,7 @@ public class UserProfile {
     private String username;
     private String userProfileImageLink; // S3 key
 
+    public Optional<String> getUserProfileImageLink() {
+        return Optional.ofNullable(userProfileImageLink);
+    }
 }
