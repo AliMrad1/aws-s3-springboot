@@ -31,7 +31,7 @@ public class FileStore {
         try {
             s3.putObject(path, fileName, inputStream, metaData);
         } catch (AmazonServiceException e){
-            throw new IllegalStateException("Failed to store data in S3",e);
+            throw new IllegalStateException("Failed to store data in Amazon S3",e);
         }
     }
 }
