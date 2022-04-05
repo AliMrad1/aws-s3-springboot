@@ -11,12 +11,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AmazonConfig {
 
-    @Bean //make available to inject this class with other
-    public AmazonS3 s3(){
+     //make available to inject this class with other
+    @Bean
+    public AmazonS3 amazonS3(){
         AWSCredentials awsCredentials = new BasicAWSCredentials(
                 "AKIAXTLTRJ2N4N3G5ZZK", "Dl++hx2ROUy6ixZZdbKMzI6jYZOGSzsx0oh+khHK"
         );
 
-        return AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();
+        return AmazonS3ClientBuilder.standard().withRegion("us-east-1") // its important to add with region
+                .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
+                .build();
     }
 }
