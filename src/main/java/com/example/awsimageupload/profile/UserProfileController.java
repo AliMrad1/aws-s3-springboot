@@ -11,6 +11,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("api/v1/user-profile")
 @AllArgsConstructor
+@CrossOrigin("*") // accept request from different hosts
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
