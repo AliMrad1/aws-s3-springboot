@@ -33,7 +33,7 @@ const UserProfiles = () => {
 
 function Dropzone() {
   const onDrop = useCallback(acceptedFiles => {
-    const file = acceptedFiles[0]; // take the first file 
+    const file = acceptedFiles[0]; // take the first file
     console.log(file);
   }, [])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
@@ -43,8 +43,8 @@ function Dropzone() {
         <input {...getInputProps()} />
         {
           isDragActive ?
-              <p>Drop the files here ...</p> :
-              <p>Drag 'n' drop some files here, or click to select files</p>
+              <p>Drop the image here ...</p> :
+              <p>Drag 'n' drop Image Profile, or click to select Profile</p>
         }
       </div>
   )
