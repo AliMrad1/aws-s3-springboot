@@ -4,9 +4,12 @@ import React,{ useEffect, useState } from "react";
 
 // this is functional component
 const UserProfiles = () => {
+
+  const [userProfiles, setUserProfiles] = useState([]);
+
   const fetchUserProfiles = () => {
     axios.get("http://localhost:8080/api/v1/user-profile").then(res => {
-      console.log(res);
+      setUserProfiles(res.data);
     })
   }
 
@@ -14,7 +17,14 @@ const UserProfiles = () => {
     fetchUserProfiles();
   }, []);
 
-  return <h1>Hello World</h1>;
+  return userProfiles.map((userProfile, index) => {
+    return(
+      <div key={index.toString()}>
+        <h2>{userProfile.username}</h2>
+        <p>{userProfile.id}</p>
+      </div>
+    )
+  });
 };
 
 function App() {
