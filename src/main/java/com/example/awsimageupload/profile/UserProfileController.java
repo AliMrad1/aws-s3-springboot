@@ -23,8 +23,8 @@ public class UserProfileController {
 
     @PostMapping(
             path = "{userProfileID}/image/upload",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE, // accept a specific data sent from the client
+            produces = MediaType.APPLICATION_JSON_VALUE // specific the media type sent back to the client
     )
     public void uploadUserProfileImage(@PathVariable("userProfileID") UUID userProfileID,
                                        @RequestParam("file")MultipartFile file)
