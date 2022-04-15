@@ -1,12 +1,12 @@
 package com.example.awsimageupload.bucket;
 
-public enum BuketName {
+public enum BucketName {
 
     PROFILE_IMAGE("mystorage0101");
 
     private final String bucketName;
 
-    BuketName(String bucketName) {
+    BucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
