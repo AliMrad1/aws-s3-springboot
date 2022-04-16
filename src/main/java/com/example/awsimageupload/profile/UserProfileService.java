@@ -17,6 +17,7 @@ public class UserProfileService {
 
     private final UserProfileDataAccessService userProfileDataAccessService;
     private final FileStore fileStore;
+    private final UserProfile userProfile;
 
     List<UserProfile> getUserProfiles(){
         return userProfileDataAccessService.getUserProfiles();
@@ -36,6 +37,7 @@ public class UserProfileService {
         String fileName = String.format("%s-%s",file.getOriginalFilename(), UUID.randomUUID());
         try {
             fileStore.save(path,fileName,Optional.of(metaData),file.getInputStream());
+            userProfile.setUserProfileImageLink(fileName);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
