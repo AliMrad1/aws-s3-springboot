@@ -32,7 +32,7 @@ public class UserProfileController {
         userProfileService.uploadUserProfileImage(userProfileID,file);
     }
 
-    @GetMapping("{userProfileID}/image/downlaod")
+    @GetMapping("{userProfileID}/image/download")
     public byte[] downloadUserProfileImage(@PathVariable("userProfileID") UUID userProfileID){
         return userProfileService.downloadUserProfileImage(userProfileID);
     }
