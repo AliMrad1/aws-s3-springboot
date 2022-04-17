@@ -33,9 +33,9 @@ the code place.
                                                in get endpoint link , I capture the user id to get the image for this specific id.
 * application.properties: specific the max size can be sent to this application.
 
-### aws side
-*create a bucket inside S3 service and the name of her into Bucket Details Class.
-*go to security credentials and generate access and secret key.
+### AWS side:
+* create a bucket inside S3 service and the name of her into Bucket Details Class.
+* go to security credentials and generate access and secret key.
 
 ###Happy Coding , and GOOD LUCK!
 
